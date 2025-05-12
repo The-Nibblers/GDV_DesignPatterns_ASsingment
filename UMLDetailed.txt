@@ -1,0 +1,76 @@
+@startuml
+interface IDamageType{
++ApplyDamage(HealthSystem Enemy)
+}
+class FireDamage{
++ApplyDamage(HealthSystem Enemy)
+}
+class ShockDamage{
++ApplyDamage(HealthSystem Enemy)
+}
+class CorrosionDamage{
++ApplyDamage(HealthSystem Enemy)
+}
+
+class Weapon{
+-int Damage
+-enum DamageType
+}
+class GameManager
+
+interface IEnemyState{
++TakeDamage(HealthSystem Enemy, int amount)
+}
+class ShieldState{
++TakeDamage(HealthSystem Enemy, int amount)
+}
+class HealthState{
++TakeDamage(HealthSystem Enemy, int amount)
+}
+class ArmorState{
++TakeDamage(HealthSystem Enemy, int amount)
+}
+class DeadState{
++TakeDamage(HealthSystem Enemy, int amount)
+}
+
+class HealthSystem{
++SetState(IEnememyState)
++TakeDamage(Int amount)
+}
+class DamageFactory{
++CreateDamageType(enum elemnttype)
+}
+
+Class Enemy
+Class Player
+
+Player *-- Weapon
+Enemy *-- Weapon
+
+Player *-- HealthSystem
+Enemy *-- HealthSystem
+
+GameManager *-- Player
+GameManager *-- Enemy
+
+DamageFactory *-- FireDamage
+DamageFactory *-- ShockDamage
+DamageFactory *-- CorrosionDamage
+
+Weapon *-- DamageFactory
+
+HealthSystem *-- ShieldState
+HealthSystem *-- HealthState
+HealthSystem *-- ArmorState
+HealthSystem *-- DeadState
+
+FireDamage --> IDamageType : Uses
+ShockDamage  --> IDamageType : Uses
+CorrosionDamage --> IDamageType : Uses
+
+ShieldState --> IEnemyState : Uses
+HealthState --> IEnemyState : Uses
+ArmorState --> IEnemyState : Uses
+DeadState --> IEnemyState : Uses
+@enduml
