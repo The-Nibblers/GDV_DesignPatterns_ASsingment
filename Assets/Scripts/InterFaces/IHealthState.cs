@@ -1,6 +1,6 @@
 namespace InterFaces
 {
-    public interface IEnemyState
+    public interface IHealthState
     {
         void TakeDamage(HealthSystem enemyHealth, int amount);
     }
