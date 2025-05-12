@@ -1,0 +1,51 @@
+@startuml
+interface IDamageType
+class FireDamage
+class ShockDamage
+class CorrosionDamage
+
+class Weapon
+class GameManager
+
+interface IEnemyState
+class ShieldState
+class HealthState
+class ArmorState
+class DeadState
+
+class HealthSystem
+class DamageFactory
+
+Class Enemy
+Class Player
+
+Player *-- Weapon
+Enemy *-- Weapon
+
+Player *-- HealthSystem
+Enemy *-- HealthSystem
+
+GameManager *-- Player
+GameManager *-- Enemy
+
+DamageFactory *-- FireDamage
+DamageFactory *-- ShockDamage
+DamageFactory *-- CorrosionDamage
+
+Weapon *-- DamageFactory
+
+HealthSystem *-- ShieldState
+HealthSystem *-- HealthState
+HealthSystem *-- ArmorState
+HealthSystem *-- DeadState
+
+FireDamage --> IDamageType : Uses
+ShockDamage  --> IDamageType : Uses
+CorrosionDamage --> IDamageType : Uses
+
+ShieldState --> IEnemyState : Uses
+HealthState --> IEnemyState : Uses
+ArmorState --> IEnemyState : Uses
+DeadState --> IEnemyState : Uses
+
+@enduml
