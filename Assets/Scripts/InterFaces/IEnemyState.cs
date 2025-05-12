@@ -1,16 +1,7 @@
-using UnityEngine;
-
-public class IEnemyState : MonoBehaviour
+namespace InterFaces
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public interface IEnemyState
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        void TakeDamage(HealthSystem enemyHealth, int amount);
     }
 }

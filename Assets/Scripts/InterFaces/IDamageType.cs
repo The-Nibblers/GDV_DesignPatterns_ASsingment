@@ -1,16 +1,7 @@
-using UnityEngine;
-
-public class IDamageType : MonoBehaviour
+namespace InterFaces
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public interface IDamageType
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        void ApplyDamage(HealthSystem enemy);
     }
 }
