@@ -12,8 +12,8 @@ public class CorrosionGun : IGun
         damageTypes = DamageFactory.CreateDamageType(weaponElement);
     }
     
-    public void Shoot(HealthSystem enemy)
+    public void Shoot(HealthSystem enemy, int damage)
     {
-        damageTypes.ApplyDamage(enemy);
+        damageTypes.ApplyDamage(enemy, damage);
     }
 }

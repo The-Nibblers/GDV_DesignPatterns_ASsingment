@@ -11,8 +11,8 @@ public class ShockGun : IGun
     {
         damageTypes = DamageFactory.CreateDamageType(damageType);
     }
-    public void Shoot(HealthSystem enemy)
+    public void Shoot(HealthSystem enemy, int damage)
     {
-        damageTypes.ApplyDamage(enemy);
+        damageTypes.ApplyDamage(enemy, damage);
     }
 }

@@ -5,6 +5,8 @@ public class Player
     private IGun ShockGun;
     private IGun FireGun;
     private IGun CorrosionGun;
+    private int gunDamage = 30;
+    
     public IGun currentGun;
     
     public Player()
@@ -33,6 +35,6 @@ public class Player
 
     public void Shoot(HealthSystem healthSystem)
     {
-        currentGun.Shoot(healthSystem);
+        currentGun.Shoot(healthSystem, gunDamage);
     }
 }

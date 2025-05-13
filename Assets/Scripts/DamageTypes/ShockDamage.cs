@@ -3,9 +3,8 @@ using UnityEngine;
 
 public class ShockDamage : IDamageType
 {
-    public void ApplyDamage(HealthSystem enemy)
+    public void ApplyDamage(HealthSystem enemy, int damage)
     {
-        enemy.TakeDamage(30, DamageTypes.Shock);
-        Debug.Log("Deal Shock Damage");
+        enemy.TakeDamage(damage, DamageTypes.Shock);
     }
 }

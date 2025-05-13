@@ -18,5 +18,18 @@ public class GameManager : MonoBehaviour
         {
             player.Shoot(Enemy.enemyHealth);
         }
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            player.SwitchGun(DamageTypes.Shock);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            player.SwitchGun(DamageTypes.Fire);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            player.SwitchGun(DamageTypes.Corrosion);
+        }
     }
 }

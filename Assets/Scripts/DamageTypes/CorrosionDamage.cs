@@ -3,9 +3,8 @@ using UnityEngine;
 
 public class CorrosionDamage : IDamageType
 {
-    public void ApplyDamage(HealthSystem enemy)
+    public void ApplyDamage(HealthSystem enemy, int damage)
     {
-        enemy.TakeDamage(30, DamageTypes.Corrosion);
-        Debug.Log("Deal Corrosion Damage");
+        enemy.TakeDamage(damage, DamageTypes.Corrosion);
     }
 }

@@ -2,5 +2,5 @@ using UnityEngine;
 
 public interface IGun
 {
-    void Shoot(HealthSystem enemy);
+    void Shoot(HealthSystem enemy, int damage);
 }
