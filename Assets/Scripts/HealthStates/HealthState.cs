@@ -3,15 +3,26 @@ using UnityEngine;
 
 public class HealthState : IHealthState
 {
-    private float fireDamageModifier = 1.2f;
+    private float DamageModifier;
     public void TakeDamage(HealthSystem enemyHealth, int amount, DamageTypes damageType)
     {
-        if (damageType == DamageTypes.Fire)
+        switch (damageType)
         {
-            float floatAmount = amount;
-            floatAmount *= fireDamageModifier;
-            amount = (int)floatAmount;
+            case DamageTypes.Fire:
+                DamageModifier = 1.2f;
+                break;
+            case DamageTypes.Shock:
+                DamageModifier = 0.9f;
+                break;
+            case DamageTypes.Corrosion:
+                DamageModifier = 0.8f;
+                break;
         }
+        
+        float floatAmount = amount;
+        floatAmount *= DamageModifier;
+        amount = (int)floatAmount;
+        
         enemyHealth.health -= amount;
         Debug.Log("health damage, " + amount);
         if (enemyHealth.health <= 0)

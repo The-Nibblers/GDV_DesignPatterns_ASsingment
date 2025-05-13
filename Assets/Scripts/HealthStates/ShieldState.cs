@@ -3,15 +3,26 @@ using UnityEngine;
 
 public class ShieldState : IHealthState
 {
-    private float shieldDamageModifier = 1.2f;
+    private float DamageModifier;
     public void TakeDamage(HealthSystem enemyHealth, int amount, DamageTypes damageType)
     {
-        if (damageType == DamageTypes.Shock)
+        switch (damageType)
         {
-            float floatAmount = amount;
-            floatAmount *= shieldDamageModifier;
-            amount = (int)floatAmount;
+            case DamageTypes.Fire:
+                DamageModifier = 0.5f;
+                break;
+            case DamageTypes.Shock:
+                DamageModifier = 1.5f;
+                break;
+            case DamageTypes.Corrosion:
+                DamageModifier = 0.8f;
+                break;
         }
+        
+        float floatAmount = amount;
+        floatAmount *= DamageModifier;
+        amount = (int)floatAmount;
+        
         enemyHealth.shield -= amount;
         Debug.Log("shield damage, " + amount);
         if (enemyHealth.shield <= 0)
