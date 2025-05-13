@@ -7,5 +7,6 @@ public class CorrosionDamage : IDamageType
     {
         enemy.TakeDamage(damage, DamageTypes.Corrosion);
         Debug.Log("Corrosion Damage Applied");
+        //Apply Shock Status effect, different animations, particles etc
     }
 }

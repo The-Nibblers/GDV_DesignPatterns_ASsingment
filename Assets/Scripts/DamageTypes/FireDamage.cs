@@ -7,5 +7,6 @@ public class FireDamage : IDamageType
     {
         enemy.TakeDamage(damage, DamageTypes.Fire);
         Debug.Log("Fire Damage Applied");
+        //Apply Fire Status effect, different animations, particles etc
     }
 }
