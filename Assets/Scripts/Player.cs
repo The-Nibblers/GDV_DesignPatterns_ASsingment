@@ -14,6 +14,7 @@ public class Player
         ShockGun = new ShockGun();
         FireGun = new FireGun();
         CorrosionGun = new CorrosionGun();
+        Debug.Log("Shock gun equipped");
         currentGun = ShockGun;
     }
 
@@ -22,12 +23,15 @@ public class Player
         switch (damageType)
         {
             case DamageTypes.Corrosion:
+                Debug.Log("Corrosion gun equipped");
                 currentGun = CorrosionGun;
                 break;
             case DamageTypes.Fire:
+                Debug.Log("Fire gun equipped");
                 currentGun = FireGun;
                 break;
             case DamageTypes.Shock:
+                Debug.Log("Shock gun equipped");
                 currentGun = ShockGun;
                 break;
         }

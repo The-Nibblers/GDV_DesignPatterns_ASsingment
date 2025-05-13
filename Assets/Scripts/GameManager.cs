@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     {
         player = new Player();
         Enemy = new Enemy();
+        Debug.Log("lmouse to fire, 1 2 3 to switch guns");
     }
 
     void Update()
