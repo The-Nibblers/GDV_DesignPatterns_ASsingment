@@ -8,7 +8,7 @@ public class Test : MonoBehaviour
     void Start()
     {
         weapon = new ShockGun();
-        EnemyHealth = new HealthSystem();
+        EnemyHealth = new HealthSystem(30,50,100);
         weapon.Shoot(EnemyHealth);
         weapon.Shoot(EnemyHealth);
         weapon.Shoot(EnemyHealth);

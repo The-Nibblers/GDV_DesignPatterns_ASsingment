@@ -3,14 +3,17 @@ using UnityEngine;
 
 public class HealthSystem
 {
-    public int shield = 30;
-    public int health = 100;
-    public int armor = 100;
+    public int shield;
+    public int health;
+    public int armor;
     private IHealthState currentState;
 
-    public HealthSystem()
+    public HealthSystem(int _shield, int _health, int _armor)
     {
         currentState = new ShieldState();
+        shield = _shield;
+        health = _health;
+        armor = _armor;
     }
 
     public void setState(IHealthState newState)
@@ -18,8 +21,8 @@ public class HealthSystem
         currentState = newState;
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage, DamageTypes damageType)
     {
-        currentState.TakeDamage(this, damage);
+        currentState.TakeDamage(this, damage, damageType);
     }
 }

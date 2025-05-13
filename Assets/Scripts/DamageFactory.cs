@@ -18,13 +18,10 @@ public class DamageFactory
         {
             case DamageTypes.Fire:
                 return new FireDamage();
-                break;
             case DamageTypes.Corrosion:
                 return new CorrosionDamage();
-                break;
             case DamageTypes.Shock:
                 return new ShockDamage();
-                break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(damageType), $"No damage type for {damageType}");
         }
